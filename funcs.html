@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            margin: 0; padding: 0;
+        }
+        /*Demonstrating calc()*/
+        .calc{
+            width: calc(100% - 100px);
+            height: 100px;
+            background-color: aqua;
+        }
+        /*Demonstrating min()*/
+        .min{
+            width: min(100px, 200px, 300px);
+            height: 100px;
+            background-color: aqua;
+        }
+        /*Demonstrating max()*/
+        .max{
+            width: max(100px, 200px, 300px);
+            height: 100px;
+            background-color: aqua;
+        }
+        /*Demonstrating clamp()*/
+        .clamp{
+            width: clamp(100px, 50%, 300px);
+            height: 100px;
+            background-color: aqua;
+        }
+        /*They allow great responsiveness of elements in the document.*/
+    </style>
+    <title>Css funcs</title>
+</head>
+<body>
+    <header>
+        <h1>Css funcs</h1>
+    </header>
+    <main>
+        <div class="calc">calc</div>
+        <div class="min">min</div>
+        <div class="max">max</div>
+        <div  class="clamp">clamp</div>
+    </main>
+
+</body>
+</html>
