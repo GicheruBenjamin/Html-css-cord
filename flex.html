@@ -3,9 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CSS Flexbox Demonstration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .flex-container {
+            display: flex; /* Enables Flexbox */
+            gap: 10px;
+            border: 2px solid #ddd;
+            padding: 10px;
+            background-color: #ffffff;
+            margin: 10px 0;
+        }
+
+        .flex-container p {
+            margin: 0;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .flex-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #4a90e2;
+            color: white;
+            font-size: 16px;
+            height: 50px;
+            flex: 1;
+            border: 1px solid #ccc;
+        }
+
+        .flex-item-large {
+            flex: 2;
+            background-color: #f06;
+        }
+
+        .flex-item-small {
+            flex: 0 1 150px;
+            background-color: #50c878;
+        }
+
+        .vertical-container {
+            flex-direction: column;
+            height: 300px; /* Demonstrate vertical alignment */
+            align-items: center;
+        }
+
+        .nested-container {
+            flex: 1;
+            border: 1px dashed #888;
+            padding: 5px;
+        }
+
+        .nested-flex-item {
+            flex: 1;
+            background-color: #ffa07a;
+        }
+
+        .wrap-container {
+            flex-wrap: wrap;
+        }
+
+        .item-box {
+            width: 30%;
+            height: 100px;
+            background-color: #20b2aa;
+        }
+
+        .item-order {
+            order: 1;
+            background-color: #ff7f50;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>CSS Flexbox Demonstration</h1>
+
+    <!-- Section 1: Default Horizontal Flexbox -->
+    <div class="section">
+        <h2>1. Default Horizontal Flexbox</h2>
+        <p>Items are aligned horizontally with equal spacing.</p>
+        <div class="flex-container">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item">Item 2</div>
+            <div class="flex-item">Item 3</div>
+        </div>
+    </div>
+
+    <!-- Section 2: Vertical Alignment -->
+    <div class="section">
+        <h2>2. Vertical Alignment</h2>
+        <p>Items are stacked vertically with `flex-direction: column`.</p>
+        <div class="flex-container vertical-container">
+            <div class="flex-item">Item A</div>
+            <div class="flex-item">Item B</div>
+            <div class="flex-item">Item C</div>
+        </div>
+    </div>
+
+    <!-- Section 3: Flexible Sizing -->
+    <div class="section">
+        <h2>3. Flexible Sizing</h2>
+        <p>Items grow and shrink based on `flex` properties.</p>
+        <div class="flex-container">
+            <div class="flex-item">Item 1</div>
+            <div class="flex-item flex-item-large">Large</div>
+            <div class="flex-item flex-item-small">Small</div>
+        </div>
+    </div>
+
+    <!-- Section 4: Nested Flex Containers -->
+    <div class="section">
+        <h2>4. Nested Flex Containers</h2>
+        <p>A flex container inside another flex container.</p>
+        <div class="flex-container">
+            <div class="nested-container">
+                <div class="flex-item nested-flex-item">Nested 1</div>
+                <div class="flex-item nested-flex-item">Nested 2</div>
+            </div>
+            <div class="nested-container">
+                <div class="flex-item nested-flex-item">Nested 3</div>
+                <div class="flex-item nested-flex-item">Nested 4</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 5: Wrapping Items -->
+    <div class="section">
+        <h2>5. Wrapping Items</h2>
+        <p>Items wrap onto the next line with `flex-wrap`.</p>
+        <div class="flex-container wrap-container">
+            <div class="item-box">Box 1</div>
+            <div class="item-box">Box 2</div>
+            <div class="item-box">Box 3</div>
+            <div class="item-box">Box 4</div>
+            <div class="item-box">Box 5</div>
+        </div>
+    </div>
+
+    <!-- Section 6: Item Order -->
+    <div class="section">
+        <h2>6. Item Order</h2>
+        <p>Items can be reordered using `order`.</p>
+        <div class="flex-container">
+            <div class="flex-item">First</div>
+            <div class="flex-item item-order">Second</div>
+            <div class="flex-item">Third</div>
+        </div>
+    </div>
 </body>
 </html>
