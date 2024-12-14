@@ -55,6 +55,36 @@ section {
     margin-bottom: 2rem;
 }
 
+.responsive-units {
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.percentage {
+    width: 20%;
+    background-color: #110A;
+}
+
+.viewunits {
+    width: 20vw;
+    height: 20vh;
+    background-color: #220A;
+}
+
+.ems {
+    width: 20em;
+    background-color: #330A;
+}
+
+.rems {
+    width: 20rem;
+    background-color: #440A;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
 footer {
     background-color: #007BFF;
     color: #fff;
@@ -107,6 +137,43 @@ footer {
         font-size: 0.9rem;
     }
 }
+.grid-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping of items to the next row */
+  gap: 1rem; /* Adds space between grid items */
+}
+
+.grid-item {
+  flex: 1 1 calc(33.333% - 1rem); /* 3 items per row, with a gap */
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .grid-item {
+    flex: 1 1 calc(50% - 1rem); /* 2 items per row for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-item {
+    flex: 1 1 100%; /* 1 item per row for smaller screens */
+  }
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Auto-fit columns with a minimum size of 300px */
+  gap: 1rem; /* Space between grid items */
+  padding: 1rem;
+}
+
+.grid-item {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+
     </style>
     <title>Responsive Design Example</title>
 </head>
@@ -138,6 +205,33 @@ footer {
         <section id="contact">
             <h2>Contact Us</h2>
             <p>Feel free to contact us for more information.</p>
+        </section>
+        <section class="responsive-units">
+            <h2>Responsive Units</h2>
+            <div class="percentage">This based on %</div>
+            <div class="viewunits">This based on vw and vh units</div>
+            <div class="ems">This based on em units</div>
+            <div class="rems">This based on rem units</div>
+        </section>
+        <section class="responsive-grid">
+            <h2>Responsive Grid</h2>
+            <div class="grid-container">
+                <div class="grid-item">Item 1</div>
+                <div class="grid-item">Item 2</div>
+                <div class="grid-item">Item 3</div>
+                <div class="grid-item">Item 4</div>
+                <div class="grid-item">Item 5</div>
+                <div class="grid-item">Item 6</div>
+              </div>
+              <div class="grid-container">
+                <div class="grid-item">Item 1</div>
+                <div class="grid-item">Item 2</div>
+                <div class="grid-item">Item 3</div>
+                <div class="grid-item">Item 4</div>
+                <div class="grid-item">Item 5</div>
+                <div class="grid-item">Item 6</div>
+              </div>
+              
         </section>
     </main>
     <footer>
