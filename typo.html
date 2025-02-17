@@ -3,9 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        :root{
+            /*Fonts*/
+            --font-roboto: 'Roboto', sans-serif;
+            --font-poppins: 'Poppins', sans-serif;
+            --font-montserrat: 'Montserrat', sans-serif;
+
+            /*Font Size*/
+            --font-size-small: clamp(0.75rem, 0.25rem + 1.5vw, 0.875rem);
+            --font-size-medium: clamp(1rem, 0.5rem + 1.5vw, 1.25rem);
+            --font-size-large: clamp(1.25rem, 1rem + 1.5vw, 1.5rem);
+            --font-size-extra-large: clamp(1.5rem, 1.25rem + 1.5vw, 1.75rem);
+            --font-size-extra-extra-large: clamp(1.75rem, 1.5rem + 1.5vw, 2rem);
+
+            /*Font Weight*/
+            --font-weight-thin: 100;
+            --font-weight-extra-light: 200;
+            --font-weight-light: 300;
+            --font-weight-regular: 400;
+            --font-weight-medium: 500;
+            --font-weight-semi-bold: 600;
+            --font-weight-bold: 700;
+            --font-weight-extra-bold: 800;
+            --font-weight-black: 900;
+
+            /*Font style*/
+            --font-style-normal: normal;
+            --font-style-italic: italic;
+            --font-style-oblique: oblique;
+
+            /*Font variant*/
+            --font-variant-normal: normal;
+            --font-variant-small-caps: small-caps;
+
+            /*Font stretch*/
+            --font-stretch-normal: normal;
+            --font-stretch-ultra-condensed: ultra-condensed;
+            --font-stretch-extra-condensed: extra-condensed;
+            --font-stretch-condensed: condensed;
+            --font-stretch-semi-condensed: semi-condensed;
+            --font-stretch-semi-expanded: semi-expanded;
+            --font-stretch-expanded: expanded;
+            --font-stretch-extra-expanded: extra-expanded;
+            --font-stretch-ultra-expanded: ultra-expanded;
+
+            /*Font size adjust*/
+            --font-size-adjust-none: none;
+            --font-size-adjust-auto: auto;
+            --font-size-adjust-inherit: inherit;
+            --font-size-adjust-initial: initial;
+            --font-size-adjust-unset: unset;
+            --font-size-adjust-100: 100%;
+            --font-size-adjust-125: 125%;
+
+            /*Line height*/
+            --line-height-normal: normal;
+            --line-height-inherit: inherit;
+            --line-height-initial: initial;
+            --line-height-unset: unset;
+            --line-height-1: 1;
+            --line-height-2: 2;
+            --line-height-3: 3;
+            --line-height-4: 4;
+            --line-height-5: 5; 
+            --line-height-6: 6; 
+
+            /*Text align*/
+            --text-align-start: start;
+            --text-align-end: end;
+            --text-align-left: left;
+            --text-align-right: right;
+            --text-align-center: center;
+            --text-align-justify: justify;
+
+            /*Text transform*/
+            --text-transform-none: none;
+            --text-transform-capitalize: capitalize;
+            --text-transform-uppercase: uppercase;
+            --text-transform-lowercase: lowercase;
+            --text-transform-full-width: full-width;
+
+            /*Text decoration*/
+            --text-decoration-none: none;
+            --text-decoration-underline: underline;
+            --text-decoration-overline: overline;
+            --text-decoration-line-through: line-through;
+            --text-decoration-blink: blink;
+
+            /*Text indent*/
+            --text-indent-auto: auto;
+            --text-indent-inherit: inherit;
+            --text-indent-initial: initial;
+            --text-indent-unset: unset;
+            --text-indent-0: 0;
+            --text-indent-1: 1em;
+            --text-indent-2: 2em;
+            --text-indent-3: 3em;
+            --text-indent-4: 4em;
+            --text-indent-5: 5em;
+
+            
+        }
+
+        body{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .font-family{
+            background-color: #7a7e80;
+            color: white;
+            padding: 1rem;
+        }
+        .font-family .roboto{
+            font-family: var(--font-roboto);
+        }
+        .font-family .poppins{
+            font-family: var(--font-poppins);
+        }
+
+        .font-family .montserrat{
+            font-family: var(--font-montserrat);
+        }
+        .font-size{
+            background-color: #7a7e80;
+            color: white;
+            padding: 1rem;
+        }
+        .font-size .small{
+            font-size: var(--font-size-small);
+        }
+        .font-size .medium{
+            font-size: var(--font-size-medium);
+        }
+        .font-size .large{
+            font-size: var(--font-size-large);
+        }
+        .font-size .extra-large{
+            font-size: var(--font-size-extra-large);
+        }
+        .font-size .extra-extra-large{
+            font-size: var(--font-size-extra-extra-large);
+        }
+        .font-weight{
+            background-color: #7a7e80;
+            color: white;
+            padding: 1rem;
+        }
+        .font-weight .thin{
+            font-weight: var(--font-weight-thin);
+        }
+        .font-weight .extra-light{
+            font-weight: var(--font-weight-extra-light);
+        }
+        .font-weight .light{
+            font-weight: var(--font-weight-light);
+        }
+        .font-weight .regular{
+            font-weight: var(--font-weight-regular);
+        }
+        .font-weight .medium{
+            font-weight: var(--font-weight-medium);
+        }
+        .font-style{
+            background-color: #7a7e80;
+            color: white;
+            padding: 1rem;
+        }
+        .font-style .normal{
+            font-style: var(--font-style-normal);
+        }
+        .font-style .italic{
+            font-style: var(--font-style-italic);
+        }
+        .font-style .oblique{
+            font-style: var(--font-style-oblique);
+        }
+
+    </style>
+    <title>Typography</title>
 </head>
 <body>
+    <header>
+        <h1>Typography</h1>
+    </header>
+    <main>
+        <div class="font-family">
+            <p class="roboto">Font Family 1</p>
+            <p class="poppins">Font Family 2</p>
+            <p class="montserrat">Font Family 3</p>
+            <p class="roboto">Font Family 4</p>
+            <p class="poppins">Font Family 5</p>
+        </div>
+        <div class="font-size">
+            <p class="small">Font Size 1</p>
+            <p class="medium">Font Size 2</p>
+            <p class="large">Font Size 3</p>
+            <p class="extra-large">Font Size 4</p>
+            <p class="extra-extra-large">Font Size 5</p>
+        </div>
+        <div class="font-weight">
+            <p class="thin">Font Weight 1</p>
+            <p class="extra-light">Font Weight 2</p>
+            <p class="light">Font Weight 3</p>
+            <p class="regular">Font Weight 4</p>
+            <p class="medium">Font Weight 5</p>
+        </div>
+        <div class="font-style">
+            <p class="normal">Font Style 1</p>
+            <p class="italic">Font Style 2</p>
+            <p class="oblique">Font Style 3</p>
+            <p class="normal">Font Style 4</p>
+            <p class="italic">Font Style 5</p>
+        </div>
+    </main>
     
 </body>
 </html>
