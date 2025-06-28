@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /*Basic selectors*/
+        body{
+            background-color: linear-gradient(to right, grey , white);
+            animation: bggradients 10s linear infinite;
+        }
+        @keyframes bggradients{
+            0%{
+                background-color: linear-gradient(to right, grey , white);
+            }
+            25%{
+                background-color: linear-gradient(to top, grey , white);
+            }
+            50%{
+                background-color: linear-gradient(to left, white , grey);
+            }
+            100%{
+                background-color: linear-gradient(to right, grey , white);
+            }
+        }
+    </style>
+    <title>Selectors</title>
+</head>
+<body>
+    <header>
+        <!--Basic Selectors-->
+        <h1>Selectors</h1>
+        <p>Selectors are used to select HTML elements based on their attributes, classes, or IDs.</p>
+    </header>
+    <main>
+        <div>
+            <!--By id and class-->
+            <p id="id">This is a paragraph with an id of "id".</p>
+            <p class="class">This is a paragraph with a class of "class".</p>
+            <p>This is a paragraph without any id or class.</p>
+        </div>
+       <div>
+            <!--By combinators descedant , child , adjacent sibling and  general sibling-->
+            <div class="parent">
+                <p>This is a paragraph is a descedant of a div with a class of "parent".</p>
+                <p>This is a paragraph is a child of a div with a class of "parent".</p>
+                <h3> Heading cort</h3>
+                <h4>Heading 4 adjacent sibling to the heading 3</h4>
+                <p>This is a paragraph is an adjacent sibling of a div with a class of "parent".</p>
+            </div>
+       </div> 
+    </main>
+</body>
+</html>
