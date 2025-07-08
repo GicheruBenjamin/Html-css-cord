@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evening Scene</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+  }
+
+  header {
+    background-color: #4a90e2;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    margin: 0;
+  }
+
+  h2 {
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+    margin: 0;
+    text-align: center;
+    padding: 10px;
+  }
+
+  main > section {
+    background-color: #ccd6d8;
+    padding: 10px;
+  }
+
+  .scene {
+    background: linear-gradient(to bottom left, #d6d20c, #fafcfc);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 2fr 2fr;
+    gap: 10px;
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .sun {
+    grid-column: 4;
+    grid-row: 1;
+    justify-self: end;
+    align-self: start;
+    width: clamp(50px, 12vw, 90px);
+    height: clamp(50px, 12vw, 90px);
+    background: radial-gradient(circle, rgb(247, 219, 4), orange);
+    box-shadow: 0 0 40px rgba(247, 219, 4, 0.6);
+    border-radius: 50%;
+    filter: blur(1px);
+  }
+
+  .cloud1, .cloud2 {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    filter: blur(2px);
+    width: clamp(60px, 15vw, 120px);
+    height: clamp(30px, 8vw, 60px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  .cloud1 {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+    align-self: center;
+  }
+
+  .cloud2 {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start;
+    align-self: flex-end;
+  }
+
+  .house {
+    grid-column: 4;
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+  }
+
+  .house > .roof {
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 40px solid #8B0000;
+  }
+
+  .house > .wall {
+    background-color: #f4e4c1;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+    border: 2px solid #d2b48c;
+    border-radius: 4px;
+  }
+
+  .window {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 2px solid #555;
+    border-radius: 3px;
+  }
+
+  .door {
+    width: 25px;
+    height: 35px;
+    background-color: #663300;
+    border: 2px solid #444;
+    border-radius: 3px;
+    position: relative;
+  }
+
+  .door::after {
+    content: "";
+    width: 4px;
+    height: 4px;
+    background-color: gold;
+    border-radius: 50%;
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .tree1, .tree2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-row: 3;
+  }
+
+  .tree1 {
+    grid-column: 2;
+  }
+
+  .tree2 {
+    grid-column: 3;
+  }
+
+  .tree > .leaves {
+    background-color: green;
+    width: clamp(20px, 8vw, 50px);
+    height: clamp(20px, 8vw, 50px);
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+
+  .tree > .stem {
+    background-color: #8B4513;
+    width: clamp(6px, 2vw, 12px);
+    height: clamp(20px, 6vw, 35px);
+    border-radius: 2px;
+  }
+
+  .hillside {
+    grid-column: 1 / span 3;
+    grid-row: 3;
+    background-color: #8B4513;
+    border-top-left-radius: 100% 100%;
+    border-top-right-radius: 300% 100%;
+    box-shadow: inset 0 20px 30px rgba(0,0,0,0.3);
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Evening Scene</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Sunset</h2>
+      <div class="scene">
+        <div class="sun"></div>
+        <div class="cloud1"></div>
+        <div class="cloud2"></div>
+        <div class="house">
+          <div class="roof"></div>
+          <div class="wall">
+            <div class="window"></div>
+            <div class="door"></div>
+          </div>
+        </div>
+        <div class="tree1 tree">
+          <span class="leaves"></span>
+          <span class="stem"></span>
+        </div>
+        <div class="tree2 tree">
+          <span class="leaves"></span>
+          <span class="stem"></span>
+        </div>
+        <div class="hillside"></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
