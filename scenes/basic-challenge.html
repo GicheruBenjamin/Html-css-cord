@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root{
+            /* Root variables */
+            /*Colors black, mettalic-grey, light-blue, dark-blue, cream-white*/
+            --black: #000000;
+            --mettalic-grey: #807c79;
+            --light-blue: #4a90e2;
+            --dark-blue: #004b8d;
+            --cream-white: #f8f9fa;
+            /*Font-family 2 fonts - Arial, sans-serif and Georgia, serif*/
+            --font-arial: Arial, sans-serif;
+            --font-georgia: Georgia, serif;
+
+            /*To provide base 10 for all rem values*/
+            font-size: 10px;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0; padding: 0; /*T o ensure that the body is fully visible*/
+            background-color: var(--cream-white);
+        }
+        /*Header styles*/
+        header{
+            background-color: var(--black);
+            padding-top: 1.5rem;
+        }
+        header > h1{
+            font-size: 2rem;
+            font-family: var(--font-georgia);
+            color: var(--mettalic-grey);
+            text-align: center;
+            margin: 0;
+        }
+        header > p{
+            font-size: 1.2rem;
+            font-family: var(--font-arial);
+            color: var(--cream-white);
+            text-align: center;
+            margin: 0;
+        }
+        /****Main styles****/
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: var(--cream-white);
+        }
+        section{
+            width: 100vw;
+            height: max-content;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .profile-card{
+            background-color: var(--dark-blue);
+            width: clamp(300px, 80vw, 600px);
+            height: fit-content;
+            border-radius: 50px;
+            box-shadow: -10px 20px 30px var(--black);
+            margin: 0; padding: 0;
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-container{
+            width: 50%;
+            height: auto;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-container > img{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        .details-container{
+            width: 100%;
+            height: 100px;
+            border-radius: 0 0 10px 10px;
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .details-container > h2{
+            font-size: max(2rem, 3.2rem);
+            font-family: var(--font-georgia);
+            color: var(--mettalic-grey);
+            margin: 0;
+        }
+        .details-container > p{
+            font-size: max(1rem, 1.5rem);
+            font-family: var(--font-arial);
+            color: var(--cream-white);
+            margin: 0;
+        }
+        .profile-card > hr{
+            width: 50%;
+            height: 3px;
+            background-color: var(--black);
+            border: none;
+            margin: 0;
+        }
+        .follow-button{
+            background-color: var(--black);
+            color: var(--cream-white);
+            border: none;
+            padding: 10px 20px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            font-size: max(1.4rem, 1.8rem);
+            font-family: var(--font-arial);
+            cursor: pointer;
+        }
+        .follow-button:hover{
+            background-color: var(--mettalic-grey);
+        }
+    </style>
+    <title>Profile card</title>
+</head>
+<body>
+    <header>
+        <h1>Profile card</h1>
+        <p> Challenge:Create a personal profile card <br> 
+            using HTML and CSS that includes <br>
+            a photo, name, job title, description, <br>
+            and a "Follow" button. It should include <br> 
+            layout, text styling, colors, box model, <br>
+            and hover effects.</p>
+    </header>
+    <main>
+        <section>
+            <div class="profile-card">
+                <div class="image-container">
+                    <img src="../images/bschall.jpeg" alt="Profile photo">
+                </div>
+                <div class="details-container">
+                    <h2>John Doe</h2>
+                    <p>Front-end Developer</p>
+                </div>
+                <hr>
+                <button class="follow-button">Follow</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
