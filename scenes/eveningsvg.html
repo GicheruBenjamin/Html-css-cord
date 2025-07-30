@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evening</title>
+</head>
+<body>
+    <header> <h2>Evening</h2> </header>
+    <main>
+        <section style="height: max-content;">
+            <svg viewBox="0 0 500 300" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                <!-- Gradient Background -->
+                <defs>
+                  <linearGradient id="eveningGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#fbc2eb">
+                      <animate attributeName="stop-color" values="#fbc2eb;#a18cd1;#fbc2eb" dur="10s" repeatCount="indefinite" />
+                    </stop>
+                    <stop offset="100%" stop-color="#a18cd1">
+                      <animate attributeName="stop-color" values="#a18cd1;#fbc2eb;#a18cd1" dur="10s" repeatCount="indefinite" />
+                    </stop>
+                  </linearGradient>
+                </defs>
+              
+                <!-- Sky -->
+                <rect x="0" y="0" width="100%" height="100%" fill="url(#eveningGradient)" />
+              
+                <!-- Sun -->
+                <circle cx="400" cy="60" r="30" fill="gold">
+                  <animate attributeName="cy" values="60;80;60" dur="6s" repeatCount="indefinite" />
+                  <animate attributeName="r" values="30;35;30" dur="6s" repeatCount="indefinite" />
+                </circle>
+              
+                <!-- Hills -->
+                <path d="M0 200 Q100 150 200 200 T400 200 T600 200 L600 300 L0 300 Z" fill="#228B22" />
+                <path d="M0 220 Q100 170 200 220 T400 220 T600 220 L600 300 L0 300 Z" fill="#006400" opacity="0.8" />
+              
+                <!-- Clouds -->
+                <g fill="#fff" opacity="0.8">
+                  <ellipse cx="100" cy="60" rx="30" ry="20">
+                    <animate attributeName="cx" values="100;120;100" dur="8s" repeatCount="indefinite" />
+                  </ellipse>
+                  <ellipse cx="130" cy="60" rx="25" ry="15" />
+                  <ellipse cx="160" cy="60" rx="20" ry="10" />
+              
+                  <ellipse cx="300" cy="90" rx="35" ry="20">
+                    <animate attributeName="cx" values="300;320;300" dur="10s" repeatCount="indefinite" />
+                  </ellipse>
+                  <ellipse cx="330" cy="90" rx="30" ry="15" />
+                  <ellipse cx="360" cy="90" rx="25" ry="10" />
+                </g>
+              </svg>
+              
+ 
+        </section>
+    </main>
+</body>
+</html>

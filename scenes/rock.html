@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rock Shape Template</title>
+  <style>
+    body {
+      background: #dff0f2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .rock-container {
+        background: #fff;
+        width: 200px;
+        height: 200px;
+        position: relative;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .rock-shape {
+      fill: url(#rockGradient);
+      filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.3));
+      transition: transform 0.3s ease;
+    }
+
+    .rock-shape:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="rock-container">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <!-- Gradient -->
+      <defs>
+        <linearGradient id="rockGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#777" />
+          <stop offset="100%" stop-color="#444" />
+        </linearGradient>
+      </defs>
+
+      <!-- Rock Shape -->
+      <path
+        class="rock-shape"
+        d="M40,160 
+           Q20,100 60,80 
+           Q90,60 110,70 
+           Q150,80 160,120 
+           Q170,160 130,170 
+           Q100,180 60,170 
+           Z"
+      />
+    </svg>
+  </div>
+</body>
+</html>
